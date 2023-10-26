@@ -9,7 +9,7 @@ function Read() {
 
 
   useEffect(()=>{
-    axios.get('http://localhost:4000/users/'+id)
+    axios.get('https://crudappserver-4ul1.onrender.com/users/'+id)
     .then((res)=>{setdata(res.data)})// setdata(res.data) means , object(datas) (object with 3 key-value pairs) get from the res.data through api calling is stored in Data state that contains an object.
     .catch((err)=>{console.log(err)})
     

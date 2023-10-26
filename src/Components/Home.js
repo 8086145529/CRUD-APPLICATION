@@ -8,7 +8,7 @@ function Home() {
     // Fetching the data of that particular id and store the data in the data-state so that we can use the data outside the useEffect function, in the component
     // useEffectil thanne json serveril ninnum data fetch cheyan ulla api call kodukkanam.karanam useEffectil kodukkunath vazhi Home component open aayi varumbol thanne data fetch cheythath tablelil display aavum.
     useEffect(()=>{
-        axios.get("http://localhost:4000/users")
+        axios.get("https://crudappserver-4ul1.onrender.com/users")
         .then(res=>setData(res.data))// responseinte i.e res inte data enna keyil aan sherikum json serveril ninnumula array ullath.ath nammal .then(res=>console.log(res)) vech resine console cheyth nokkiyal kittum
 
         .catch(err=>console.log(err))
@@ -20,7 +20,7 @@ function Home() {
     const handleDelete = (id) =>{
     const confirmation = window.confirm("Do you like to Delete?")
     if(confirmation){
-        axios.delete((`http://localhost:4000/users/${id}`)) 
+        axios.delete((`https://crudappserver-4ul1.onrender.com/users/${id}`)) 
     .then(res=>
         alert("Record Successfully deleted"))
     .catch(err=>console.log(err)) 

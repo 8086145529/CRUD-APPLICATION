@@ -24,7 +24,7 @@ function Update() {
       //Fetching the data  of that particular id and store the data in the data-state so that we can use the data outside the useEffect function, in the component
      // useEffect is used so that we can get the data only once on first mounting of the component
     useEffect(() => { // we use this kind of functions to get the datas of a particular person from json server to defaultly shown in the input box,when the update componet opens
-        axios.get('http://localhost:4000/users/'+id)// In this kind of api calling for a specific id we need to give a '/' in the url inorder to add the id in the url.OR use `http://localhost:4000/users/${id}` 
+        axios.get('https://crudappserver-4ul1.onrender.com/users/'+id)// In this kind of api calling for a specific id we need to give a '/' in the url inorder to add the id in the url.OR use `http://localhost:4000/users/${id}` 
         .then(res => setInputData(res.data)) // responseinte i.e res inte data enna keyil aan sherikum json serveril ninnumula array ullath.ath nammal .then(res=>console.log(res)) vech resine console cheyth nokkiyal kittum
 
         .catch(err => console.log(err))
@@ -32,7 +32,7 @@ function Update() {
     // Updating the data of that specific id through put request on submitting the form 
     const handleSubmit = (event) => { // we use this kind of functions to update the data of that person on the json server with data stored in inputData
         event.preventDefault();
-        axios.put('http://localhost:4000/users/'+id , inputData)
+        axios.put('https://crudappserver-4ul1.onrender.com/users/'+id , inputData)
         .then(res => {
             alert("Data Updated Successfully!")
             navigate('/')

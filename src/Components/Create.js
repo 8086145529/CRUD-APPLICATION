@@ -12,7 +12,7 @@ function Create() {
     })
     const handleSubmit = (e)=>{
         e.preventDefault()
-        axios.post("http://localhost:4000/users",inputData)
+        axios.post("https://crudappserver-4ul1.onrender.com/users",inputData)
         .then(res=>{
             alert("Data Saved Successfully!")
             navigate("/")
